@@ -1,0 +1,271 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fefef4;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 30%;
+}
+.logo img:hover {
+  transform: scale(1.1);
+  background-color: rgb(91, 80, 101);
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: silver;
+}
+.header h1 {
+  font-size: 35px;
+  color: black;
+  text-shadow: 2px 2px 4px #9224241a;
+}
+
+nav ul {
+  width: 100%;
+  display: flex;
+  background-color: #977575;
+  list-style: none;
+  justify-content: space-evenly;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: #854f4f1a;
+  font-size: 20px;
+  padding: 15px;
+}
+nav li a {
+  display: inline-block;
+  justify-content: space-evenly;
+  list-style: none;
+  text-decoration: none;
+  color: rgb(216, 216, 67);
+}
+
+.footer-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: space-evenly;
+  color: black;
+  font-size: 20px;
+  background-color: silver;
+  padding: 10px;
+}
+
+.footer-text {
+  font-size: 15px;
+  color: black;
+  background-color: #977575;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links,
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-links a,
+.contact a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 2px;
+  color: black;
+}
+.horizontal-separator {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  padding-bottom: 1px;
+  margin: 5px 0;
+}
+.footer-links a:hover,
+.contact a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 28px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  nav li a {
+    font-size: 18px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .footer-head {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .vertical-separator {
+    display: none; /* Hide vertical line on small screens */
+  }
+
+  .footer-text {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 24px;
+  }
+
+  nav li a {
+    font-size: 16px;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .footer-links a,
+  .contact a {
+    font-size: 14px;
+  }
+}
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+}
+
+.hero-title {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Calculator Container */
+.calculator {
+  border: 4px solid #003f88;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Display Screen */
+.display {
+  padding: 15px;
+  background-color: white;
+  text-align: right;
+}
+
+.result {
+  font-size: 48px;
+  font-weight: bold;
+  color: #000;
+}
+
+.sub-display {
+  font-size: 14px;
+  color: gray;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #ccc;
+  margin: 0;
+}
+
+/* Buttons Grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background-color: #003f88;
+}
+
+.btn {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(0.9);
+}
+
+.btn.operator {
+  background-color: #999;
+  color: white;
+}
+
+.btn.clear {
+  background-color: red;
+  color: white;
+}
+
+.btn.equal {
+  background-color: #3b88f7;
+  color: white;
+  grid-column: span 2;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .calculator {
+    width: 90%;
+  }
+
+  .btn {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .result {
+    font-size: 36px;
+  }
+}
+
+/* font */
+.wdxl-lubrifont-sc-regular {
+  font-family: "WDXL Lubrifont SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "WDXL Lubrifont SC", sans-serif;
+}
