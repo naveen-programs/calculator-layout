@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interest Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="interestcalculator">
+    <h1 class="interest-title">Welcome to the Interest Calculator</h1>
+    <div class="Interest-container">
+      <h2>Interest Calculator</h2>
+
+      <form id="interest-form">
+        <label for="principal">Principal Amount:</label>
+        <input type="number" id="principal" required />
+
+        <label for="rate">Interest Rate (%):</label>
+        <input type="number" id="rate" required />
+
+        <label for="time">Time (years):</label>
+        <input type="number" id="time" required />
+
+        <div class="form-buttons">
+          <button type="submit">Calculate Interest</button>
+          <button type="button" onclick="resetForm()">Reset</button>
+        </div>
+      </form>
+
+      <div class="result" id="interest-result"></div>
+      <div class="result" id="total-amount"></div>
+      <div class="error" id="error-msg"></div>
+
+      <!-- Back to Home Button -->
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="index.html" class="back-home-btn">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // JS to calculate interest
+    document.getElementById("interest-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const principal = parseFloat(document.getElementById("principal").value);
+      const rate = parseFloat(document.getElementById("rate").value);
+      const time = parseFloat(document.getElementById("time").value);
+
+      const resultDiv = document.getElementById("interest-result");
+      const totalDiv = document.getElementById("total-amount");
+      const errorDiv = document.getElementById("error-msg");
+
+      resultDiv.textContent = "";
+      totalDiv.textContent = "";
+      errorDiv.textContent = "";
+
+      if (principal <= 0 || rate <= 0 || time <= 0) {
+        errorDiv.textContent = "All values must be greater than 0.";
+        return;
+      }
+
+      const interest = (principal * rate * time) / 100;
+      const total = principal + interest;
+
+      resultDiv.textContent = `Simple Interest: ₹${interest.toFixed(2)}`;
+      totalDiv.textContent = `Total Amount: ₹${total.toFixed(2)}`;
+    });
+
+    function resetForm() {
+      document.getElementById("interest-form").reset();
+      document.getElementById("interest-result").textContent = "";
+      document.getElementById("total-amount").textContent = "";
+      document.getElementById("error-msg").textContent = "";
+    }
+  </script>
+</body>
+</html>
